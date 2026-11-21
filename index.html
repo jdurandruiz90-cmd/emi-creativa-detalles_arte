@@ -1,1 +1,1066 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emi Creativa | Detalles y Arte en Microporoso</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Quicksand"', 'sans-serif'],
+                    },
+                    colors: {
+                        crema: '#FFFDF9',
+                        blush: '#F4A2B8',
+                        blushSuave: '#FCEEF2',
+                        salvia: '#A8D5BA',
+                        salviaSuave: '#EEF7F1',
+                        terracota: '#E07A5F',
+                        terracotaOscuro: '#C86247',
+                        carbon: '#2D2A32',
+                        grisSuave: '#686270'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFFDF9;
+            color: #2D2A32;
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .paper-texture {
+            background-image: radial-gradient(#E07A5F 1px, transparent 1px), radial-gradient(#A8D5BA 1px, #FFFDF9 1px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-blushSuave selection:text-terracota">
 
+    <!-- Notificaciones Toast -->
+    <div id="toast-container" class="fixed top-4 right-4 left-4 sm:left-auto sm:w-96 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky top-0 z-30 bg-crema/95 backdrop-blur-md border-b border-blush/30 shadow-2xs">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blush via-terracota to-salvia flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-scissors text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-carbon tracking-tight block leading-none">Emi Creativa</span>
+                    <span class="text-[11px] font-bold text-terracota tracking-widest uppercase">Detalles y Arte</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-2 sm:gap-2.5">
+                <a id="nav-tiktok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                   class="w-9 h-9 rounded-full bg-blushSuave hover:bg-blush/40 text-carbon flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-tiktok text-sm"></i>
+                </a>
+                <a id="nav-facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                   class="w-9 h-9 rounded-full bg-blushSuave hover:bg-blush/40 text-carbon flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+                <a id="nav-whatsapp" href="#" target="_blank" rel="noopener noreferrer"
+                   class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-3.5 py-2 rounded-full shadow-xs flex items-center gap-1.5 transition-all active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span class="hidden sm:inline">WhatsApp</span>
+                </a>
+                <!-- Botón directo de Administración en barra superior -->
+                <button onclick="openAdminAccess()" title="Acceso Administración"
+                        class="w-9 h-9 rounded-full bg-carbon/5 hover:bg-carbon hover:text-white text-carbon flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-gear text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main class="flex-grow">
+        
+        <!-- Hero Banner -->
+        <section class="relative overflow-hidden bg-gradient-to-b from-blushSuave via-salviaSuave/50 to-crema pt-8 pb-12 sm:pt-14 sm:pb-16 px-4">
+            <div class="absolute inset-0 paper-texture opacity-25 pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/95 border border-blush/50 text-carbon text-xs font-bold shadow-2xs mb-4">
+                    <i class="fa-solid fa-sparkles text-terracota"></i> <span id="hero-tagline">Artesanía hecha a mano en microporoso (fomi)</span>
+                </span>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-carbon leading-tight mb-1">
+                    Emi Creativa
+                </h1>
+                <p class="font-serif italic text-xl sm:text-2xl text-terracota mb-5">
+                    Detalles y Arte
+                </p>
+                
+                <p class="text-grisSuave text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed mb-7 font-medium">
+                    Transformamos el microporoso en regalos personalizados, maquetas escolares, centros de mesa para eventos y decoración infantil llenos de color, ternura y dedicación.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                    <a id="hero-whatsapp" href="#" target="_blank" rel="noopener noreferrer"
+                       class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-terracota hover:bg-terracotaOscuro text-white font-bold text-sm sm:text-base shadow-md shadow-terracota/25 flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Consultar Pedido por WhatsApp</span>
+                    </a>
+                    
+                    <div class="flex items-center gap-3 w-full sm:w-auto justify-center">
+                        <a id="hero-tiktok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"
+                           class="flex-1 sm:flex-initial px-5 py-3.5 rounded-full bg-white hover:bg-blushSuave text-carbon border border-blush/50 font-bold text-sm shadow-2xs flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-tiktok text-terracota"></i>
+                            <span>TikTok</span>
+                        </a>
+                        <a id="hero-facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+                           class="flex-1 sm:flex-initial px-5 py-3.5 rounded-full bg-white hover:bg-blushSuave text-carbon border border-blush/50 font-bold text-sm shadow-2xs flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-facebook text-terracota"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros y Buscador -->
+        <section id="catalogo" class="max-w-6xl mx-auto px-4 pt-2 pb-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-carbon">Catálogo de Creaciones</h2>
+                    <p class="text-xs sm:text-sm text-grisSuave">Explora nuestros trabajos o pídelo personalizado directamente a nuestro WhatsApp</p>
+                </div>
+                
+                <div class="relative w-full sm:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-blush text-sm"></i>
+                    <input type="text" id="search-input" placeholder="Buscar regalo, maqueta, fofucha..." oninput="renderCatalog()"
+                           class="w-full pl-9 pr-4 py-2.5 rounded-full bg-white border border-blush/60 text-sm focus:outline-none focus:border-terracota transition-colors">
+                </div>
+            </div>
+
+            <!-- Píldoras de Categoría -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2">
+                <button onclick="setCategory('Todos')" data-cat="Todos" class="cat-btn active shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-terracota text-white shadow-xs">
+                    Todos
+                </button>
+                <button onclick="setCategory('Regalos y Detalles')" data-cat="Regalos y Detalles" class="cat-btn shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-grisSuave border border-blush/50 hover:bg-blushSuave">
+                    🎁 Regalos y Detalles
+                </button>
+                <button onclick="setCategory('Decoración')" data-cat="Decoración" class="cat-btn shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-grisSuave border border-blush/50 hover:bg-blushSuave">
+                    🎀 Decoración
+                </button>
+                <button onclick="setCategory('Maquetas y Escolar')" data-cat="Maquetas y Escolar" class="cat-btn shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-grisSuave border border-blush/50 hover:bg-blushSuave">
+                    🎨 Maquetas y Escolar
+                </button>
+                <button onclick="setCategory('Recuerdos y Eventos')" data-cat="Recuerdos y Eventos" class="cat-btn shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-grisSuave border border-blush/50 hover:bg-blushSuave">
+                    ✨ Recuerdos y Eventos
+                </button>
+            </div>
+        </section>
+
+        <!-- Cuadrícula de Productos -->
+        <section class="max-w-6xl mx-auto px-4 pb-16">
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            <!-- Estado Vacío -->
+            <div id="empty-catalog" class="hidden py-14 px-4 text-center bg-white rounded-3xl border border-blush/40 shadow-2xs max-w-lg mx-auto">
+                <div class="w-16 h-16 rounded-full bg-blushSuave text-terracota flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-carbon mb-2">No encontramos trabajos con ese filtro</h3>
+                <p class="text-sm text-grisSuave mb-6">¿Tienes una idea especial en mente? Lo diseñamos desde cero en microporoso para ti.</p>
+                <a id="empty-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white font-bold text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Cotizar diseño personalizado
+                </a>
+            </div>
+        </section>
+
+        <!-- Banner Pedido a Medida -->
+        <section class="max-w-5xl mx-auto px-4 pb-16">
+            <div class="rounded-3xl bg-gradient-to-r from-blushSuave via-salviaSuave to-blushSuave p-6 sm:p-10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 border border-blush/40 shadow-2xs">
+                <div class="max-w-xl">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-carbon mb-2">¿Buscas un trabajo personalizado?</h3>
+                    <p class="text-grisSuave text-sm sm:text-base font-medium">
+                        Hacemos realidad cualquier personaje, nombre decorativo, recuerdo de bautizo, graduación o maqueta escolar con acabados prolijos.
+                    </p>
+                </div>
+                <a id="banner-whatsapp" href="#" target="_blank" rel="noopener noreferrer"
+                   class="shrink-0 px-6 py-3.5 rounded-full bg-carbon hover:bg-terracota text-white font-bold text-sm shadow-md flex items-center gap-2 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Enviar mi idea</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-white border-t border-blush/30 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-blush/20">
+                <div class="text-center md:text-left">
+                    <span class="font-serif font-bold text-2xl text-carbon block">Emi Creativa</span>
+                    <span class="text-xs font-bold text-terracota uppercase tracking-widest">Detalles y Arte en Microporoso</span>
+                    <p class="text-xs text-grisSuave mt-2"><i class="fa-solid fa-heart text-blush mr-1"></i> Hecho a mano con amor • Envíos y pedidos personalizados</p>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <a id="footer-tiktok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"
+                       class="px-4 py-2.5 rounded-full bg-crema hover:bg-blushSuave border border-blush/40 text-carbon text-xs font-bold flex items-center gap-2 transition-colors">
+                        <i class="fa-brands fa-tiktok text-terracota"></i> TikTok
+                    </a>
+                    <a id="footer-facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+                       class="px-4 py-2.5 rounded-full bg-crema hover:bg-blushSuave border border-blush/40 text-carbon text-xs font-bold flex items-center gap-2 transition-colors">
+                        <i class="fa-brands fa-facebook-f text-terracota"></i> Facebook
+                    </a>
+                    <a id="footer-whatsapp" href="#" target="_blank" rel="noopener noreferrer"
+                       class="px-4 py-2.5 rounded-full bg-salviaSuave hover:bg-salvia/40 border border-salvia text-carbon text-xs font-bold flex items-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-700 text-sm"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-grisSuave">
+                <p>© <span id="year"></span> Emi Creativa - Detalles y Arte.</p>
+                
+                <!-- Botón Acceso Administración -->
+                <button onclick="openAdminAccess()" class="inline-flex items-center gap-2 bg-blushSuave/80 hover:bg-terracota hover:text-white text-carbon font-bold transition-colors py-2 px-4 rounded-full border border-blush/40">
+                    <span>🔒 Acceso Administración</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL VER DETALLE DE PRODUCTO ================= -->
+    <div id="product-modal" class="hidden fixed inset-0 z-40 bg-carbon/60 backdrop-blur-xs flex items-center justify-center p-4" onclick="closeProductModal()">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-blush/40" onclick="event.stopPropagation()">
+            <div class="relative aspect-square sm:aspect-[4/3] bg-blushSuave/40">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                <button onclick="closeProductModal()" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/95 text-carbon shadow-md flex items-center justify-center hover:bg-terracota hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <span id="modal-category" class="text-xs font-bold text-terracota uppercase tracking-wider"></span>
+                <div class="flex items-start justify-between gap-3 mt-1 mb-3">
+                    <h3 id="modal-title" class="font-serif text-2xl font-bold text-carbon leading-snug"></h3>
+                    <span id="modal-price" class="text-xl font-bold text-terracota shrink-0 bg-blushSuave px-3 py-1 rounded-2xl"></span>
+                </div>
+                <p id="modal-desc" class="text-sm text-grisSuave leading-relaxed mb-6"></p>
+                <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer"
+                   class="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-md flex items-center justify-center gap-2 transition-all">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Pedir por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MODAL ACCESO ADMINISTRACIÓN (PIN) ================= -->
+    <div id="login-modal" class="hidden fixed inset-0 z-50 bg-carbon/60 backdrop-blur-xs flex items-center justify-center p-4" onclick="closeLoginModal()">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-blush/40" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-2xl bg-blushSuave text-terracota flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button onclick="closeLoginModal()" class="w-9 h-9 rounded-full bg-crema text-grisSuave hover:text-carbon flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-carbon mb-1">Acceso Administración</h3>
+            <p class="text-xs sm:text-sm text-grisSuave mb-4">Administra los productos, precios y número de WhatsApp de <strong>Emi Creativa</strong>.</p>
+
+            <div class="p-3 rounded-2xl bg-salviaSuave border border-salvia/60 text-xs text-carbon mb-5 flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-info text-emerald-700 text-base shrink-0"></i>
+                <span>PIN inicial por defecto: <strong class="font-bold text-sm bg-white px-2 py-0.5 rounded-lg border border-salvia">1234</strong> (puedes cambiarlo dentro del panel).</span>
+            </div>
+
+            <form onsubmit="verifyAdminPin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-carbon mb-1">Ingresa el PIN de Administradora</label>
+                    <input type="password" id="admin-pin-input" inputmode="numeric" placeholder="••••" required
+                           class="w-full px-4 py-3.5 rounded-2xl bg-crema border border-blush text-center text-xl tracking-[0.4em] font-bold focus:outline-none focus:border-terracota">
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-2xl bg-terracota hover:bg-terracotaOscuro text-white font-bold text-sm shadow-md transition-colors">
+                    Ingresar al Panel
+                </button>
+            </form>
+
+            <div class="mt-4 pt-4 border-t border-blush/20 text-center">
+                <button type="button" onclick="enterDirectAdmin()" class="text-xs font-bold text-grisSuave hover:text-terracota underline">
+                    Entrar directo (Modo Prueba en 1 clic)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= DRAWER / MODAL PANEL ADMINISTRATIVO ================= -->
+    <div id="admin-drawer" class="hidden fixed inset-0 z-50 bg-carbon/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-crema w-full max-w-4xl h-[92vh] sm:h-[88vh] rounded-t-3xl sm:rounded-3xl shadow-2xl border border-blush/40 flex flex-col overflow-hidden">
+            
+            <!-- Header del Panel -->
+            <div class="bg-white px-5 py-4 border-b border-blush/30 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-terracota text-white flex items-center justify-center">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-lg sm:text-xl font-bold text-carbon leading-tight">Panel Administrativo</h2>
+                        <span class="text-[11px] font-bold text-emerald-700 bg-salviaSuave px-2 py-0.5 rounded-full">Guardado automático activo</span>
+                    </div>
+                </div>
+                <button onclick="closeAdminPanel()" class="px-4 py-2 rounded-full bg-carbon hover:bg-terracota text-white text-xs font-bold transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Cerrar Panel</span>
+                </button>
+            </div>
+
+            <!-- Pestañas -->
+            <div class="bg-white px-4 py-2.5 border-b border-blush/20 flex gap-2 overflow-x-auto no-scrollbar shrink-0">
+                <button onclick="switchAdminTab('productos')" id="tab-btn-productos" class="admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-terracota text-white shrink-0 transition-all">
+                    <i class="fa-solid fa-shapes mr-1.5"></i> Productos
+                </button>
+                <button onclick="switchAdminTab('redes')" id="tab-btn-redes" class="admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-grisSuave hover:bg-blushSuave shrink-0 transition-all">
+                    <i class="fa-brands fa-whatsapp mr-1.5"></i> WhatsApp y Redes
+                </button>
+                <button onclick="switchAdminTab('respaldo')" id="tab-btn-respaldo" class="admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-grisSuave hover:bg-blushSuave shrink-0 transition-all">
+                    <i class="fa-solid fa-shield-halved mr-1.5"></i> Seguridad y Respaldo
+                </button>
+            </div>
+
+            <!-- Contenido Scrolleable del Panel -->
+            <div class="p-4 sm:p-6 overflow-y-auto flex-grow space-y-6">
+                
+                <!-- PESTAÑA 1: PRODUCTOS -->
+                <div id="tab-productos" class="space-y-6">
+                    <div class="bg-white rounded-3xl p-5 border border-blush/30 shadow-2xs">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 id="form-title" class="font-serif text-lg sm:text-xl font-bold text-carbon">+ Agregar Nuevo Trabajo</h3>
+                            <button type="button" id="btn-cancel-edit" onclick="resetProductForm()" class="hidden text-xs font-bold text-terracota underline">
+                                Cancelar edición
+                            </button>
+                        </div>
+
+                        <form id="product-form" onsubmit="saveProduct(event)" class="space-y-4">
+                            <input type="hidden" id="prod-id">
+
+                            <!-- Foto -->
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1.5">Foto del trabajo en microporoso *</label>
+                                <div class="flex flex-col sm:flex-row items-center gap-4">
+                                    <div class="w-full sm:w-32 h-32 rounded-2xl bg-blushSuave/60 border-2 border-dashed border-blush flex items-center justify-center overflow-hidden shrink-0">
+                                        <img id="prod-preview" src="" alt="Vista previa" class="hidden w-full h-full object-cover">
+                                        <div id="prod-placeholder" class="text-center p-2">
+                                            <i class="fa-solid fa-camera text-xl text-terracota mb-1"></i>
+                                            <span class="block text-[11px] font-semibold text-grisSuave">Subir foto</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-full flex-1">
+                                        <label for="prod-file" class="cursor-pointer inline-flex items-center justify-center w-full sm:w-auto px-5 py-3 rounded-2xl bg-blushSuave hover:bg-blush/40 text-carbon font-bold text-xs sm:text-sm border border-blush/50 transition-colors">
+                                            <i class="fa-solid fa-image text-terracota mr-2"></i> Elegir foto de galería o cámara
+                                        </label>
+                                        <input type="file" id="prod-file" accept="image/*" onchange="processImageFile(event)" class="hidden">
+                                        <p class="text-[11px] text-grisSuave mt-2">La imagen se comprime automáticamente para que la página cargue rápido en celulares.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-bold text-carbon mb-1">Título del trabajo *</label>
+                                    <input type="text" id="prod-title" required placeholder="Ej: Fofucha Graduada Personalizada"
+                                           class="w-full px-4 py-2.5 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-carbon mb-1">Precio en Soles (S/) *</label>
+                                    <input type="number" id="prod-price" step="0.50" min="1" required placeholder="35.00"
+                                           class="w-full px-4 py-2.5 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1">Categoría *</label>
+                                <select id="prod-category" class="w-full px-4 py-2.5 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota">
+                                    <option value="Regalos y Detalles">🎁 Regalos y Detalles</option>
+                                    <option value="Decoración">🎀 Decoración</option>
+                                    <option value="Maquetas y Escolar">🎨 Maquetas y Escolar</option>
+                                    <option value="Recuerdos y Eventos">✨ Recuerdos y Eventos</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1">Descripción corta *</label>
+                                <textarea id="prod-desc" rows="2" required placeholder="Ej: Elaborado en microporoso termoformado y escarchado, mide 25 cm. Personalizable con nombre."
+                                          class="w-full px-4 py-2.5 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 rounded-2xl bg-terracota hover:bg-terracotaOscuro text-white font-bold text-sm shadow-sm transition-colors">
+                                <i class="fa-solid fa-floppy-disk mr-1.5"></i> Guardar Trabajo en el Catálogo
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Lista de productos actuales -->
+                    <div class="bg-white rounded-3xl p-5 border border-blush/30 shadow-2xs">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-serif text-lg font-bold text-carbon">Trabajos Publicados (<span id="admin-count">0</span>)</h3>
+                            <button type="button" onclick="restoreSampleProducts()" class="text-xs font-bold px-3 py-1.5 rounded-full bg-salviaSuave text-carbon border border-salvia hover:bg-salvia/30">
+                                Restaurar ejemplos
+                            </button>
+                        </div>
+                        <div id="admin-products-list" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- PESTAÑA 2: WHATSAPP Y REDES -->
+                <div id="tab-redes" class="hidden">
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 border border-blush/30 shadow-2xs">
+                        <h3 class="font-serif text-xl font-bold text-carbon mb-1">WhatsApp y Redes Sociales</h3>
+                        <p class="text-xs text-grisSuave mb-5">Todos los botones de pedido y contacto de la web usarán estos datos al instante.</p>
+
+                        <form onsubmit="saveSettings(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1">
+                                    <i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> Número de WhatsApp (Perú +51)
+                                </label>
+                                <input type="text" id="set-whatsapp" required placeholder="51999999999"
+                                       class="w-full px-4 py-3 rounded-2xl bg-crema border border-blush/60 text-sm font-semibold focus:outline-none focus:border-terracota">
+                                <p class="text-[11px] text-grisSuave mt-1">Escribe <strong>51</strong> seguido de los 9 dígitos de tu celular (ejemplo: <code>51987654321</code>).</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1">Frase de presentación (Subtítulo superior)</label>
+                                <input type="text" id="set-tagline" required placeholder="Artesanía hecha a mano en microporoso (fomi)"
+                                       class="w-full px-4 py-3 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1">
+                                    <i class="fa-brands fa-tiktok text-carbon mr-1"></i> Enlace de tu perfil de TikTok
+                                </label>
+                                <input type="url" id="set-tiktok" placeholder="https://www.tiktok.com/@emicreativa.pe"
+                                       class="w-full px-4 py-3 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-carbon mb-1">
+                                    <i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Enlace de tu página de Facebook
+                                </label>
+                                <input type="url" id="set-facebook" placeholder="https://www.facebook.com/emicreativa"
+                                       class="w-full px-4 py-3 rounded-2xl bg-crema border border-blush/60 text-sm focus:outline-none focus:border-terracota">
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-colors">
+                                <i class="fa-solid fa-check mr-1.5"></i> Guardar Configuración
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- PESTAÑA 3: SEGURIDAD Y RESPALDO -->
+                <div id="tab-respaldo" class="hidden space-y-6">
+                    <!-- Cambiar PIN -->
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 border border-blush/30 shadow-2xs">
+                        <h3 class="font-serif text-lg font-bold text-carbon mb-1">Cambiar PIN de Acceso</h3>
+                        <p class="text-xs text-grisSuave mb-4">Personaliza la clave numérica para entrar a este panel administrativo.</p>
+                        <form onsubmit="changeAdminPin(event)" class="flex flex-col sm:flex-row gap-3">
+                            <input type="text" id="new-pin-input" inputmode="numeric" minlength="4" maxlength="8" required placeholder="Nuevo PIN (ej: 2026)"
+                                   class="flex-1 px-4 py-3 rounded-2xl bg-crema border border-blush/60 text-sm font-bold focus:outline-none focus:border-terracota">
+                            <button type="submit" class="px-6 py-3 rounded-2xl bg-carbon hover:bg-terracota text-white font-bold text-sm transition-colors">
+                                Actualizar PIN
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Exportar / Importar JSON -->
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 border border-blush/30 shadow-2xs">
+                        <h3 class="font-serif text-lg font-bold text-carbon mb-1">Respaldo y Sincronización entre Dispositivos</h3>
+                        <p class="text-xs text-grisSuave mb-4">Como tus productos y fotos se guardan directamente en tu navegador, puedes descargar una copia de seguridad para pasar el catálogo completo de la computadora al celular o viceversa.</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button type="button" onclick="exportCatalogJSON()" class="flex-1 py-3 px-4 rounded-2xl bg-salviaSuave hover:bg-salvia/40 border border-salvia text-carbon font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors">
+                                <i class="fa-solid fa-download text-emerald-700"></i> Exportar Catálogo (.json)
+                            </button>
+                            
+                            <label for="import-json-file" class="cursor-pointer flex-1 py-3 px-4 rounded-2xl bg-blushSuave hover:bg-blush/40 border border-blush text-carbon font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors">
+                                <i class="fa-solid fa-upload text-terracota"></i> Importar Catálogo (.json)
+                            </label>
+                            <input type="file" id="import-json-file" accept=".json" onchange="importCatalogJSON(event)" class="hidden">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT AUTÓNOMO (100% LOCALSTORAGE) ================= -->
+    <script>
+        const STORAGE_KEYS = {
+            PRODUCTS: 'emi_creativa_catalog_v2',
+            SETTINGS: 'emi_creativa_settings_v2',
+            PIN: 'emi_creativa_admin_pin_v2'
+        };
+
+        let products = [];
+        let settings = {
+            whatsapp: '51999999999',
+            tagline: 'Artesanía hecha a mano en microporoso (fomi)',
+            tiktok: 'https://www.tiktok.com',
+            facebook: 'https://www.facebook.com'
+        };
+        let currentFilter = 'Todos';
+        let uploadedImageBase64 = '';
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Generar ilustraciones SVG artesanales para los 4 ejemplos iniciales
+        function buildCraftSVG(title, subtitle, bgHex, accentHex, emoji) {
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+                <rect width="600" height="600" fill="${bgHex}"/>
+                <circle cx="300" cy="255" r="145" fill="#FFFFFF" fill-opacity="0.75"/>
+                <circle cx="300" cy="255" r="132" fill="none" stroke="${accentHex}" stroke-width="4" stroke-dasharray="10 8"/>
+                <text x="300" y="295" font-size="115" text-anchor="middle">${emoji}</text>
+                <text x="300" y="455" font-family="Georgia, serif" font-weight="bold" font-size="28" fill="#2D2A32" text-anchor="middle">${title}</text>
+                <text x="300" y="492" font-family="sans-serif" font-weight="600" font-size="17" fill="#686270" text-anchor="middle">${subtitle}</text>
+            </svg>`;
+            return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+        }
+
+        function getInitialSampleProducts() {
+            return [
+                {
+                    id: 'item-1',
+                    title: 'Fofucha Personalizada Graduación',
+                    price: 45.00,
+                    category: 'Regalos y Detalles',
+                    description: 'Muñeca 3D termoformada en microporoso con toga, birrete y nombre personalizado en la base. Ideal para regalo de promoción.',
+                    image: buildCraftSVG('Fofucha Graduada', 'Emi Creativa • Regalos Únicos', '#FCEEF2', '#E07A5F', '🎓')
+                },
+                {
+                    id: 'item-2',
+                    title: 'Topper Cake Temático con Nombre',
+                    price: 22.00,
+                    category: 'Decoración',
+                    description: 'Adorno para torta en capas de microporoso escarchado con efecto relieve 3D. Se personaliza con la edad y personaje favorito.',
+                    image: buildCraftSVG('Topper Cake 3D', 'Emi Creativa • Decoración', '#EEF7F1', '#A8D5BA', '🎂')
+                },
+                {
+                    id: 'item-3',
+                    title: 'Maqueta Sistema Solar en Relieve',
+                    price: 55.00,
+                    category: 'Maquetas y Escolar',
+                    description: 'Maqueta escolar educativa elaborada en microporoso y esferas termoformadas pintadas a mano con etiquetas claras.',
+                    image: buildCraftSVG('Maqueta Escolar 3D', 'Emi Creativa • Proyectos', '#FDF3E7', '#E07A5F', '🪐')
+                },
+                {
+                    id: 'item-4',
+                    title: 'Recuerdos Baby Shower / Bautizo (x12)',
+                    price: 36.00,
+                    category: 'Recuerdos y Eventos',
+                    description: 'Docena de recuerdos tiernos en tonos pastel con imán o base para mesa y tarjetita personalizada del evento.',
+                    image: buildCraftSVG('Recuerdos x12 Unid.', 'Emi Creativa • Eventos', '#FCEEF2', '#F4A2B8', '🧸')
+                }
+            ];
+        }
+
+        // Cargar datos desde localStorage
+        function loadState() {
+            try {
+                const savedSettings = localStorage.getItem(STORAGE_KEYS.SETTINGS);
+                if (savedSettings) {
+                    settings = { ...settings, ...JSON.parse(savedSettings) };
+                }
+
+                const savedProducts = localStorage.getItem(STORAGE_KEYS.PRODUCTS);
+                if (savedProducts) {
+                    products = JSON.parse(savedProducts);
+                } else {
+                    products = getInitialSampleProducts();
+                    localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(products));
+                }
+            } catch (e) {
+                products = getInitialSampleProducts();
+            }
+
+            if (!localStorage.getItem(STORAGE_KEYS.PIN)) {
+                localStorage.setItem(STORAGE_KEYS.PIN, '1234');
+            }
+
+            applySettingsToUI();
+            renderCatalog();
+        }
+
+        function persistProducts() {
+            try {
+                localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(products));
+            } catch (e) {
+                showToast('El almacenamiento está lleno. Intenta subir fotos más ligeras.', 'error');
+            }
+        }
+
+        function showToast(msg, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const el = document.createElement('div');
+            const bg = type === 'error' ? 'bg-red-600' : (type === 'info' ? 'bg-carbon' : 'bg-emerald-600');
+            const icon = type === 'error' ? 'fa-circle-exclamation' : (type === 'info' ? 'fa-circle-info' : 'fa-circle-check');
+
+            el.className = `${bg} text-white px-4 py-3 rounded-2xl shadow-lg flex items-center gap-3 text-xs sm:text-sm font-bold pointer-events-auto transition-opacity duration-300`;
+            el.innerHTML = `<i class="fa-solid ${icon} text-base"></i><span>${msg}</span>`;
+            container.appendChild(el);
+
+            setTimeout(() => {
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 300);
+            }, 3200);
+        }
+
+        function applySettingsToUI() {
+            const phone = (settings.whatsapp || '51999999999').replace(/\D/g, '');
+            const defaultText = encodeURIComponent('¡Hola Emi Creativa! 🌸 Vi su catálogo web y me gustaría consultar por un trabajo personalizado en microporoso.');
+            const waUrl = `https://wa.me/${phone}?text=${defaultText}`;
+
+            ['nav-whatsapp', 'hero-whatsapp', 'empty-whatsapp', 'banner-whatsapp', 'footer-whatsapp'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = waUrl;
+            });
+
+            const tk = settings.tiktok || 'https://www.tiktok.com';
+            ['nav-tiktok', 'hero-tiktok', 'footer-tiktok'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = tk;
+            });
+
+            const fb = settings.facebook || 'https://www.facebook.com';
+            ['nav-facebook', 'hero-facebook', 'footer-facebook'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = fb;
+            });
+
+            document.getElementById('hero-tagline').textContent = settings.tagline || 'Artesanía hecha a mano en microporoso (fomi)';
+
+            // Rellenar formulario de configuración
+            document.getElementById('set-whatsapp').value = phone;
+            document.getElementById('set-tagline').value = settings.tagline || '';
+            document.getElementById('set-tiktok').value = settings.tiktok || '';
+            document.getElementById('set-facebook').value = settings.facebook || '';
+        }
+
+        function buildProductWhatsAppLink(item) {
+            const phone = (settings.whatsapp || '51999999999').replace(/\D/g, '');
+            const formattedPrice = Number(item.price || 0).toFixed(2);
+            const message = encodeURIComponent(`¡Hola Emi Creativa! 🌸 Me interesa este diseño de su catálogo:\n\n✨ *${item.title}*\n💰 Precio: S/ ${formattedPrice}\n\n¿Me brindan información para realizar un pedido?`);
+            return `https://wa.me/${phone}?text=${message}`;
+        }
+
+        function setCategory(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-btn active shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-terracota text-white shadow-xs';
+                } else {
+                    btn.className = 'cat-btn shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all bg-white text-grisSuave border border-blush/50 hover:bg-blushSuave';
+                }
+            });
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('products-grid');
+            const empty = document.getElementById('empty-catalog');
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+
+            const filtered = products.filter(item => {
+                const matchCat = currentFilter === 'Todos' || item.category === currentFilter;
+                const matchText = !query ||
+                    item.title.toLowerCase().includes(query) ||
+                    item.description.toLowerCase().includes(query);
+                return matchCat && matchText;
+            });
+
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            grid.classList.remove('hidden');
+
+            grid.innerHTML = filtered.map(item => {
+                const price = Number(item.price || 0).toFixed(2);
+                const waUrl = buildProductWhatsAppLink(item);
+                return `
+                <article class="bg-white rounded-3xl overflow-hidden border border-blush/30 shadow-2xs hover:shadow-md transition-all flex flex-col group">
+                    <div class="relative aspect-square bg-blushSuave/40 overflow-hidden cursor-pointer" onclick="openProductDetail('${item.id}')">
+                        <img src="${item.image}" alt="${item.title}" loading="lazy"
+                             onerror="this.src='https://placehold.co/600x600/FCEEF2/E07A5F?text=Emi+Creativa'"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-white/95 text-carbon shadow-2xs">
+                            ${item.category}
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 onclick="openProductDetail('${item.id}')" class="font-serif text-lg font-bold text-carbon leading-snug cursor-pointer hover:text-terracota transition-colors">
+                                    ${item.title}
+                                </h3>
+                                <span class="font-bold text-base text-terracota bg-blushSuave px-2.5 py-0.5 rounded-xl shrink-0">
+                                    S/ ${price}
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-grisSuave line-clamp-2 mb-4">${item.description}</p>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button type="button" onclick="openProductDetail('${item.id}')"
+                                    class="px-3.5 py-2.5 rounded-2xl bg-crema hover:bg-blushSuave border border-blush/50 text-carbon font-bold text-xs transition-colors">
+                                Ver Detalle
+                            </button>
+                            <a href="${waUrl}" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 py-2.5 px-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-2xs transition-all active:scale-95">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Pedir por WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>`;
+            }).join('');
+        }
+
+        function openProductDetail(id) {
+            const item = products.find(p => p.id === id);
+            if (!item) return;
+
+            document.getElementById('modal-img').src = item.image;
+            document.getElementById('modal-category').textContent = item.category;
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-price').textContent = `S/ ${Number(item.price || 0).toFixed(2)}`;
+            document.getElementById('modal-desc').textContent = item.description;
+            document.getElementById('modal-whatsapp-btn').href = buildProductWhatsAppLink(item);
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // ================= ACCESO Y PANEL ADMINISTRATIVO =================
+
+        function openAdminAccess() {
+            document.getElementById('admin-pin-input').value = '';
+            document.getElementById('login-modal').classList.remove('hidden');
+            setTimeout(() => document.getElementById('admin-pin-input').focus(), 100);
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+        }
+
+        function verifyAdminPin(e) {
+            e.preventDefault();
+            const entered = document.getElementById('admin-pin-input').value.trim();
+            const savedPin = localStorage.getItem(STORAGE_KEYS.PIN) || '1234';
+
+            if (entered === savedPin) {
+                closeLoginModal();
+                openAdminPanel();
+                showToast('¡Bienvenida al Panel de Emi Creativa!');
+            } else {
+                showToast('PIN incorrecto. El PIN inicial es 1234.', 'error');
+            }
+        }
+
+        function enterDirectAdmin() {
+            closeLoginModal();
+            openAdminPanel();
+            showToast('Modo Administrador activo');
+        }
+
+        function openAdminPanel() {
+            renderAdminProductsList();
+            document.getElementById('admin-drawer').classList.remove('hidden');
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('admin-drawer').classList.add('hidden');
+        }
+
+        function switchAdminTab(tabName) {
+            ['productos', 'redes', 'respaldo'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-btn-${t}`);
+                btn.className = 'admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-grisSuave hover:bg-blushSuave shrink-0 transition-all';
+            });
+
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+            activeBtn.className = 'admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-terracota text-white shrink-0 transition-all';
+        }
+
+        // Compresión automática de foto en el navegador (máx 800px JPEG)
+        function processImageFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const MAX_DIM = 800;
+                    let w = img.width;
+                    let h = img.height;
+
+                    if (w > h && w > MAX_DIM) {
+                        h = Math.round(h * (MAX_DIM / w));
+                        w = MAX_DIM;
+                    } else if (h > MAX_DIM) {
+                        w = Math.round(w * (MAX_DIM / h));
+                        h = MAX_DIM;
+                    }
+
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+
+                    uploadedImageBase64 = canvas.toDataURL('image/jpeg', 0.78);
+                    const preview = document.getElementById('prod-preview');
+                    preview.src = uploadedImageBase64;
+                    preview.classList.remove('hidden');
+                    document.getElementById('prod-placeholder').classList.add('hidden');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveProduct(e) {
+            e.preventDefault();
+            const id = document.getElementById('prod-id').value;
+            const title = document.getElementById('prod-title').value.trim();
+            const price = parseFloat(document.getElementById('prod-price').value);
+            const category = document.getElementById('prod-category').value;
+            const description = document.getElementById('prod-desc').value.trim();
+
+            if (!id && !uploadedImageBase64) {
+                showToast('Por favor selecciona una foto del trabajo.', 'error');
+                return;
+            }
+
+            if (id) {
+                products = products.map(p => {
+                    if (p.id === id) {
+                        return {
+                            ...p,
+                            title,
+                            price,
+                            category,
+                            description,
+                            image: uploadedImageBase64 || p.image
+                        };
+                    }
+                    return p;
+                });
+                showToast('¡Trabajo actualizado correctamente!');
+            } else {
+                products.unshift({
+                    id: 'item-' + Date.now(),
+                    title,
+                    price,
+                    category,
+                    description,
+                    image: uploadedImageBase64
+                });
+                showToast('¡Nuevo trabajo publicado en el catálogo!');
+            }
+
+            persistProducts();
+            renderCatalog();
+            renderAdminProductsList();
+            resetProductForm();
+        }
+
+        function editProduct(id) {
+            const item = products.find(p => p.id === id);
+            if (!item) return;
+
+            document.getElementById('prod-id').value = item.id;
+            document.getElementById('prod-title').value = item.title;
+            document.getElementById('prod-price').value = item.price;
+            document.getElementById('prod-category').value = item.category;
+            document.getElementById('prod-desc').value = item.description;
+
+            uploadedImageBase64 = item.image;
+            const preview = document.getElementById('prod-preview');
+            preview.src = item.image;
+            preview.classList.remove('hidden');
+            document.getElementById('prod-placeholder').classList.add('hidden');
+
+            document.getElementById('form-title').textContent = '✏️ Editando Trabajo';
+            document.getElementById('btn-cancel-edit').classList.remove('hidden');
+        }
+
+        function resetProductForm() {
+            document.getElementById('product-form').reset();
+            document.getElementById('prod-id').value = '';
+            uploadedImageBase64 = '';
+            document.getElementById('prod-preview').classList.add('hidden');
+            document.getElementById('prod-placeholder').classList.remove('hidden');
+            document.getElementById('form-title').textContent = '+ Agregar Nuevo Trabajo';
+            document.getElementById('btn-cancel-edit').classList.add('hidden');
+        }
+
+        function deleteProduct(id) {
+            products = products.filter(p => p.id !== id);
+            persistProducts();
+            renderCatalog();
+            renderAdminProductsList();
+            showToast('Trabajo eliminado del catálogo', 'info');
+        }
+
+        function restoreSampleProducts() {
+            const samples = getInitialSampleProducts().map((s, i) => ({
+                ...s,
+                id: 'sample-' + Date.now() + '-' + i
+            }));
+            products = [...samples, ...products];
+            persistProducts();
+            renderCatalog();
+            renderAdminProductsList();
+            showToast('¡Ejemplos restaurados en el catálogo!');
+        }
+
+        function renderAdminProductsList() {
+            const list = document.getElementById('admin-products-list');
+            document.getElementById('admin-count').textContent = products.length;
+
+            if (products.length === 0) {
+                list.innerHTML = `<p class="text-xs sm:text-sm text-grisSuave text-center py-6">No hay trabajos publicados aún. Agrega uno arriba o restaura los ejemplos.</p>`;
+                return;
+            }
+
+            list.innerHTML = products.map(item => `
+                <div class="flex items-center justify-between gap-3 p-3 rounded-2xl bg-crema border border-blush/30">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img src="${item.image}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover shrink-0 bg-blushSuave">
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-sm text-carbon truncate">${item.title}</h4>
+                            <span class="text-xs font-bold text-terracota">S/ ${Number(item.price || 0).toFixed(2)}</span>
+                            <span class="text-[11px] text-grisSuave ml-1.5">• ${item.category}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1.5 shrink-0">
+                        <button type="button" onclick="editProduct('${item.id}')" title="Editar"
+                                class="w-9 h-9 rounded-xl bg-white border border-blush/50 text-carbon hover:bg-blushSuave flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-pen text-xs"></i>
+                        </button>
+                        <button type="button" onclick="deleteProduct('${item.id}')" title="Eliminar"
+                                class="w-9 h-9 rounded-xl bg-white border border-red-200 text-red-600 hover:bg-red-50 flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-trash text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function saveSettings(e) {
+            e.preventDefault();
+            const whatsapp = document.getElementById('set-whatsapp').value.replace(/\D/g, '');
+            const tagline = document.getElementById('set-tagline').value.trim();
+            const tiktok = document.getElementById('set-tiktok').value.trim();
+            const facebook = document.getElementById('set-facebook').value.trim();
+
+            settings = { whatsapp, tagline, tiktok, facebook };
+            localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
+            applySettingsToUI();
+            renderCatalog();
+            showToast('¡Configuración de WhatsApp y Redes guardada!');
+        }
+
+        function changeAdminPin(e) {
+            e.preventDefault();
+            const newPin = document.getElementById('new-pin-input').value.trim();
+            if (newPin.length < 4) {
+                showToast('El PIN debe tener al menos 4 dígitos.', 'error');
+                return;
+            }
+            localStorage.setItem(STORAGE_KEYS.PIN, newPin);
+            document.getElementById('new-pin-input').value = '';
+            showToast('¡PIN de seguridad actualizado!');
+        }
+
+        function exportCatalogJSON() {
+            const payload = {
+                brand: 'Emi Creativa - Detalles y Arte',
+                exportedAt: new Date().toISOString(),
+                settings,
+                products
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `catalogo-emi-creativa-${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('Respaldo descargado correctamente');
+        }
+
+        function importCatalogJSON(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (Array.isArray(data.products)) {
+                        products = data.products;
+                        persistProducts();
+                    }
+                    if (data.settings) {
+                        settings = { ...settings, ...data.settings };
+                        localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
+                    }
+                    applySettingsToUI();
+                    renderCatalog();
+                    renderAdminProductsList();
+                    showToast('¡Catálogo importado y sincronizado!');
+                } catch (err) {
+                    showToast('El archivo seleccionado no es válido.', 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Inicializar aplicación
+        loadState();
+    </script>
+</body>
+</html>
